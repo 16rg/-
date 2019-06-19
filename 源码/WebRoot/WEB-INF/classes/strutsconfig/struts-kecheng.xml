@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="html"/>
+
+	<package name="manage_kecheng" namespace="/kecheng"
+		extends="struts-default">
+		<action name="kechenglist" method="kechenglist"
+			class="kechengAction">
+			<result name="success">/WEB-INF/jsp/kecheng/kechenglist.jsp</result>
+		</action>
+		<action name="kechenglist2" method="kechenglist2"
+			class="kechengAction">
+			<result name="success">/WEB-INF/jsp/kecheng/kechenglist2.jsp</result>
+		</action>
+		<action name="kechengupdate" method="kechengupdate" class="kechengAction">
+		<result name="success" >/WEB-INF/jsp/kecheng/kechengupdate.jsp</result>
+		</action>
+		<action name="kechengupdate2" method="kechengupdate2" class="kechengAction">
+		<result name="success" >/WEB-INF/jsp/kecheng/kechengupdate2.jsp</result>
+		</action>
+		<action name="kechengadd" method="kechengadd"
+			class="kechengAction">
+			<result name="success">/WEB-INF/jsp/kecheng/kechengadd.jsp</result>
+		</action>
+        <action name="kechengdel" method="kechengdel" class="kechengAction">
+			<result name="success" type="redirect">kechenglist.html</result>
+	    </action>
+		<action name="kechengadd2" method="kechengadd2"
+			class="kechengAction">
+			<result name="success" type="redirect">kechenglist.html</result>
+		</action>
+		<action name="searchkecheng" method="searchkecheng"
+			class="kechengAction">
+			<result name="success">/WEB-INF/jsp/kecheng/kechenglist.jsp</result>
+		</action>
+		<action name="passwordupdate" method="passwordupdate" class="kechengAction">
+		<result name="success" >/WEB-INF/jsp/kecheng/kechengok.jsp</result>
+		</action>
+	</package>
+	
+</struts>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="html"/>
+
+	<package name="manage_user" namespace="/"
+		extends="struts-default">
+		<action name="userlist" method="userlist"
+			class="manageAction">
+			<result name="success">/WEB-INF/jsp/manage/userlist.jsp</result>
+		</action>
+		<action name="usershow" method="usershow" class="manageAction">
+		<result name="success" >/WEB-INF/jsp/manage/usershow.jsp</result>
+		</action>
+		<action name="userupdate" method="userupdate" class="manageAction">
+		<result name="success" >/WEB-INF/jsp/manage/userupdate.jsp</result>
+		</action>
+		<action name="userupdate2" method="userupdate2" class="manageAction">
+		<result name="success" >/WEB-INF/jsp/manage/userupdate2.jsp</result>
+		</action>
+		<action name="useradd" method="useradd"
+			class="manageAction">
+			<result name="success">/WEB-INF/jsp/manage/useradd.jsp</result>
+		</action>
+        <action name="userdel" method="userdel" class="manageAction">
+			<result name="success" type="redirect">userlist.html</result>
+	    </action>
+		<action name="useradd2" method="useradd2"
+			class="manageAction">
+			<result name="success" type="redirect">userlist.html</result>
+		</action>
+		<action name="searchuser" method="searchuser"
+			class="manageAction">
+			<result name="success">/WEB-INF/jsp/manage/userlist.jsp</result>
+		</action>
+		<action name="passwordupdateok" method="passwordupdateok" class="manageAction">
+		<result name="success" >/WEB-INF/jsp/manage/pwd.jsp</result>
+		</action>
+		<action name="passwordupdate" method="passwordupdate" class="manageAction">
+		<result name="success" >/WEB-INF/jsp/manage/pwd.jsp</result>
+		</action>
+	</package>
+	
+</struts>

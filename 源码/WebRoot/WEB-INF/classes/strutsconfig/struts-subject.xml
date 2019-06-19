@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="html"/>
+
+	<package name="manage_subject" namespace="/subject"
+		extends="struts-default">
+		<action name="subjectlist" method="subjectlist"
+			class="subjectAction">
+			<result name="success">/WEB-INF/jsp/subject/subjectlist.jsp</result>
+		</action>
+		<action name="subjectupdate" method="subjectupdate" class="subjectAction">
+		<result name="success" >/WEB-INF/jsp/subject/subjectupdate.jsp</result>
+		</action>
+		<action name="subjectupdate2" method="subjectupdate2" class="subjectAction">
+		<result name="success" >/WEB-INF/jsp/subject/subjectupdate2.jsp</result>
+		</action>
+		<action name="subjectadd" method="subjectadd"
+			class="subjectAction">
+			<result name="success">/WEB-INF/jsp/subject/subjectadd.jsp</result>
+		</action>
+        <action name="subjectdel" method="subjectdel" class="subjectAction">
+			<result name="success" type="redirect">subjectlist.html</result>
+	    </action>
+		<action name="subjectadd2" method="subjectadd2"
+			class="subjectAction">
+			<result name="success" type="redirect">subjectlist.html</result>
+		</action>
+		
+	</package>
+	
+</struts>

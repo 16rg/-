@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	
+	<!--           Actions          -->
+	
+	<bean id="manageAction" class="manage.action.ManageAction" scope="prototype">
+	   
+		<property name="userDao"><ref bean="userDao" /></property>
+		<property name="banjiDao"><ref bean="banjiDao" /></property>
+		 <property name="kaoqinlogDao"><ref bean="kaoqinlogDao" /></property>
+
+	</bean>
+	
+	<bean id="kechengAction" class="manage.action.KechengAction" scope="prototype">
+	
+		<property name="kechengDao"><ref bean="kechengDao" /></property>
+		<property name="banjiDao"><ref bean="banjiDao" /></property>
+
+	</bean>
+	
+	<bean id="banjiAction" class="manage.action.BanJiAction" scope="prototype">
+	
+		<property name="banjiDao"><ref bean="banjiDao" /></property>
+
+	</bean>
+	<bean id="subjectAction" class="manage.action.SubjectAction" scope="prototype">
+	
+		<property name="subjectDao"><ref bean="subjectDao" /></property>
+
+	</bean>
+	<bean id="kaoqinlogAction" class="manage.action.KaoQinLogAction" scope="prototype">
+		<property name="kaoqinlogDao"><ref bean="kaoqinlogDao" /></property>
+		<property name="banjiDao"><ref bean="banjiDao" /></property>
+		<property name="userDao"><ref bean="userDao" /></property>
+		<property name="subjectDao"><ref bean="subjectDao" /></property>
+	</bean>
+	<bean id="qingjiadanAction" class="manage.action.QingJiaDanAction" scope="prototype">
+	
+		<property name="qingjiadanDao"><ref bean="qingjiadanDao" /></property>
+		<property name="banjiDao"><ref bean="banjiDao" /></property>
+
+	</bean>
+	
+	
+	
+</beans>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="html"/>
+
+	<package name="manage_qingjiadan" namespace="/qingjiadan"
+		extends="struts-default">
+		<action name="qingjiadanlist" method="qingjiadanlist"
+			class="qingjiadanAction">
+			<result name="success">/WEB-INF/jsp/qingjiadan/qingjiadanlist.jsp</result>
+		</action>
+		<action name="qingjiadanupdate" method="qingjiadanupdate" class="qingjiadanAction">
+		<result name="success" >/WEB-INF/jsp/qingjiadan/qingjiadanupdate.jsp</result>
+		</action>
+		<action name="qingjiadanupdate2" method="qingjiadanupdate2" class="qingjiadanAction">
+		<result name="success" >/WEB-INF/jsp/qingjiadan/qingjiadanupdate2.jsp</result>
+		</action>
+		<action name="qingjiadanadd" method="qingjiadanadd"
+			class="qingjiadanAction">
+			<result name="success">/WEB-INF/jsp/qingjiadan/qingjiadanadd.jsp</result>
+		</action>
+        <action name="qingjiadandel" method="qingjiadandel" class="qingjiadanAction">
+			<result name="success" type="redirect">qingjiadanlist.html</result>
+	    </action>
+		<action name="qingjiadanadd2" method="qingjiadanadd2"
+			class="qingjiadanAction">
+			<result name="success" type="redirect">qingjiadanlist.html</result>
+		</action>
+		
+		
+		<action name="qingjiadanupdate_sh" method="qingjiadanupdate_sh" class="qingjiadanAction">
+		<result name="success" >/WEB-INF/jsp/qingjiadan/qingjiadanupdate_sh.jsp</result>
+		</action>
+		<action name="qingjiadanupdate2_sh" method="qingjiadanupdate2_sh" class="qingjiadanAction">
+		<result name="success" >/WEB-INF/jsp/qingjiadan/qingjiadanupdate2_sh.jsp</result>
+		</action>
+	</package>
+	
+</struts>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="html"/>
+
+	<package name="manage_kaoqinlog" namespace="/kaoqinlog"
+		extends="struts-default">
+		<action name="kaoqinloglist" method="kaoqinloglist"
+			class="kaoqinlogAction">
+			<result name="success">/WEB-INF/jsp/kaoqinlog/kaoqinloglist.jsp</result>
+		</action>
+		<action name="kaoqinloglist2" method="kaoqinloglist2"
+			class="kaoqinlogAction">
+			<result name="success">/WEB-INF/jsp/kaoqinlog/kaoqinloglist2.jsp</result>
+		</action>
+		<action name="kaoqinlogupdate" method="kaoqinlogupdate" class="kaoqinlogAction">
+		<result name="success" >/WEB-INF/jsp/kaoqinlog/kaoqinlogupdate.jsp</result>
+		</action>
+		<action name="kaoqinlogupdate2" method="kaoqinlogupdate2" class="kaoqinlogAction">
+		<result name="success" >/WEB-INF/jsp/kaoqinlog/kaoqinlogupdate2.jsp</result>
+		</action>
+		<action name="kaoqinlogadd" method="kaoqinlogadd"
+			class="kaoqinlogAction">
+			<result name="success">/WEB-INF/jsp/kaoqinlog/kaoqinlogadd.jsp</result>
+		</action>
+        <action name="kaoqinlogdel" method="kaoqinlogdel" class="kaoqinlogAction">
+			<result name="success" type="redirect">kaoqinloglist.html</result>
+	    </action>
+		<action name="kaoqinlogadd2" method="kaoqinlogadd2"
+			class="kaoqinlogAction">
+			<result name="success" type="redirect">kaoqinloglist.html</result>
+		</action>
+		
+		<action name="searchkaoqin" method="searchkaoqin"
+			class="kaoqinlogAction">
+			<result name="success">/WEB-INF/jsp/kaoqinlog/kaoqinloglist.jsp</result>
+		</action>
+		<action name="kaoqinlogaddlist" method="kaoqinlogaddlist"
+			class="kaoqinlogAction">
+			<result name="success" type="redirect">kaoqinloglist2.html</result>
+		</action>
+		<!-- 学生签到 -->
+		<action name="kaoqinlogadd4stu" method="kaoqinlogadd4stu"
+			class="kaoqinlogAction">
+			<result name="success">/WEB-INF/jsp/kaoqinlog/signin.jsp</result>
+		</action>
+		<action name="kaoqinlogadd4stu2" method="kaoqinlogadd4stu2"
+			class="kaoqinlogAction">
+			<result name="success" type="redirect">kaoqinloglist.html</result>
+		</action>
+		<!-- 学生签退 -->
+		<action name="kaoqinlogexit4stu" method="kaoqinlogexit4stu"
+			class="kaoqinlogAction">
+			<result name="success">/WEB-INF/jsp/kaoqinlog/signout.jsp</result>
+		</action>
+		<action name="kaoqinlogexit4stu2" method="kaoqinlogexit4stu2"
+			class="kaoqinlogAction">
+			<result name="success" type="redirect">kaoqinloglist.html</result>
+		</action>
+	</package>
+	
+</struts>
